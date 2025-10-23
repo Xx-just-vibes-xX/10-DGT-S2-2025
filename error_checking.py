@@ -1,6 +1,6 @@
 # Error checking
 # Author: Timea Croucamp
-# Date: 22/10/12025
+# Date: 24/10/12025
 # Version 1
 
 # Code that tests whether a valid input is given (v1)
@@ -51,7 +51,7 @@ test_int_num() # This calls the function so that we can use it'''
 # Use the function parameters to make my code
 # more pythonic.
 
-def test_int(question): # 'question' is a placeholder
+'''def test_int(question): # 'question' is a placeholder
     done = False
     while not done:
         error = "That is not a valid number"
@@ -75,4 +75,44 @@ num2 = test_int("Please enter your second number:")
 print(f"Your second number you entered is {num2}")
 
 sum = num1 + num2
-print(f"Your numbers added together is {sum}.")
+print(f"Your numbers added together is {sum}.")'''
+
+# Code that tests whether a valid input is given (v1.4)
+# Use the function parameters to make my code
+# more pythonic.
+
+def valid_num(question, low, high):
+    error = f"Whoops, that is not an integer between {low} and {high}."
+    while True:
+        try:
+            response = int(input(question))
+            # if response >= 0 and response <= 10:
+            if low <= response <= high:
+                break # This stops the loop
+
+            else:
+                print(f"{error}\n")
+
+        except ValueError:
+            print(error)
+    return response # This makes the response available to be used
+
+# Main routine
+
+if __name__ == "__main__":
+    num_1 = valid_num("Enter a number between 1 and 10: ",1,10) 
+    print(f"You entered {num_1}\n")
+
+    num_2 = valid_num("Enter a number between 15 and 25: ",15,25)
+    print(f"You entered {num_2}\n")
+
+    num_3 = valid_num("Enter a number between 70 and 90: ",70,90)
+    print(f"You entered {num_3}\n")
+
+    # Multiply the result of num_1, num_2, num_3
+    multiply = num_1 * num_2 * num_3
+    print(f"Your three numbers multiplied together are equal to {multiply}\n")
+
+    # Adding the numbers
+    sum = num_1 + num_2 + num_3
+    print(f"The total of {num_1}, {num_2}, {num_3} is {sum}.\n")
