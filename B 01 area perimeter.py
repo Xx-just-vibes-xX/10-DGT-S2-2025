@@ -52,3 +52,4 @@ while keep_going == "":
     print()
 
 print("Thank you for using the area / perimeter calculator")
+print("Have a wonderful day!")
