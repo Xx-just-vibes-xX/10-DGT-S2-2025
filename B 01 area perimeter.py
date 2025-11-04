@@ -1,8 +1,16 @@
+# Author: Timea Croucamp
+# Date: 4 / 11/ 2025
 # Ask user for width and loop until they
 # enter a number that is more than zero
+
+print("Welcome to the area / perimeter calculator")
+
+name = input("Please enter your name: ")
+print(f"Hello {name}!")
+
+print("Please follow the instructions for a successful outcome")
+
 def num_check(question):
-
-
 
     error = "Please enter a number that is more than zero\n"
     while True:
